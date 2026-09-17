@@ -195,10 +195,11 @@ function parsear(html, padre) {
 }
 
 /* ------------------------------ entorno --------------------------------- */
-function montarEntorno(rutaHtml, almacen) {
+function montarEntorno(rutaHtml, almacen, hash) {
   const raiz = new Nodo('#document', {});
   raiz.innerHTML = fs.readFileSync(rutaHtml, 'utf8');
   const cuerpo = raiz.querySelector('body') || raiz;
+  const oyentesDocumento = {};
 
   const documento = {
     readyState: 'complete',
@@ -209,7 +210,8 @@ function montarEntorno(rutaHtml, almacen) {
     querySelectorAll: (s) => raiz.querySelectorAll(s),
     getElementById: (id) => raiz.querySelectorAll('#' + id)[0] || null,
     createElement: (t) => new Nodo(t, {}),
-    addEventListener() {},
+    addEventListener(tipo, fn) { (oyentesDocumento[tipo] = oyentesDocumento[tipo] || []).push(fn); },
+    _disparar(tipo, ev) { (oyentesDocumento[tipo] || []).forEach((fn) => fn(ev)); },
     /* el filtro solo se aplica a los nodos del tipo pedido (whatToShow),
        igual que en un navegador */
     createTreeWalker: function (root, tipo, filtro) {
@@ -236,7 +238,7 @@ function montarEntorno(rutaHtml, almacen) {
     requestAnimationFrame: (f) => f(),
     matchMedia: (q) => ({ matches: false, media: q, addEventListener() {}, addListener() {} })
   };
-  global.location = { hash: '', pathname: '/' + path.basename(rutaHtml) };
+  global.location = { hash: hash || '', pathname: '/' + path.basename(rutaHtml) };
   global.fetch = function () { return Promise.reject(new Error('sin red en las pruebas')); };
   global.alert = function () {};
   global.confirm = function () { return true; };
@@ -259,8 +261,8 @@ function cargar(ruta, nombre) {
   vm.runInThisContext(fs.readFileSync(path.join(RAIZ, ruta), 'utf8'), { filename: nombre });
 }
 
-function ejecutarPanel(rutaHtml, almacen) {
-  montarEntorno(rutaHtml, almacen);
+function ejecutarPanel(rutaHtml, almacen, hash) {
+  montarEntorno(rutaHtml, almacen, hash);
   cargar('assets/js/data.js', 'data.js');
   cargar('assets/js/app.js', 'app.js');
   cargar('assets/js/panel.js', 'panel.js');
@@ -394,6 +396,42 @@ const api6 = ejecutarPanel(path.join(RAIZ, 'index.html'), almacenFalso());
   api7.ponerTexto(el, 'Segunda edición');
   comprobar('la edición nueva sobrevive', /Segunda edición/.test(el.innerHTML), true);
 }
+
+/* --- las tres formas de entrar al panel ------------------------------- */
+function pruebaAccesos() {
+  // 1. por la dirección, añadiendo #panel
+  const apiHash = ejecutarPanel(path.join(RAIZ, 'carta.html'), almacenFalso(), '#panel');
+  comprobar('acceso: #panel abre el panel', apiHash.estaAbierto(), true);
+
+  const apiAdmin = ejecutarPanel(path.join(RAIZ, 'index.html'), almacenFalso(), '#admin');
+  comprobar('acceso: #admin también lo abre', apiAdmin.estaAbierto(), true);
+
+  const apiNormal = ejecutarPanel(path.join(RAIZ, 'index.html'), almacenFalso(), '#cebiches');
+  comprobar('acceso: otra ancla no lo abre', apiNormal.estaAbierto(), false);
+
+  // 2. con el atajo Ctrl + Alt + E
+  const apiTecla = ejecutarPanel(path.join(RAIZ, 'index.html'), almacenFalso());
+  comprobar('acceso: sin tocar nada está cerrado', apiTecla.estaAbierto(), false);
+  global.document._disparar('keydown', { altKey: true, ctrlKey: true, key: 'e', preventDefault() {} });
+  comprobar('acceso: Ctrl + Alt + E lo abre', apiTecla.estaAbierto(), true);
+  global.document._disparar('keydown', { altKey: true, ctrlKey: true, key: 'E', preventDefault() {} });
+  comprobar('acceso: y lo vuelve a cerrar', apiTecla.estaAbierto(), false);
+  global.document._disparar('keydown', { altKey: true, ctrlKey: true, key: 'p', preventDefault() {} });
+  comprobar('acceso: Ctrl + Alt + P también sirve', apiTecla.estaAbierto(), true);
+  global.document._disparar('keydown', { key: 'e' });
+  comprobar('acceso: la letra E sola no hace nada', apiTecla.estaAbierto(), true);
+
+  // 3. con cinco clics seguidos en el personaje del pie
+  const apiClics = ejecutarPanel(path.join(RAIZ, 'index.html'), almacenFalso());
+  const marca = global.document.querySelector('footer.pie .pie__marca img');
+  comprobar('acceso: existe el personaje del pie', !!marca, true);
+  for (let i = 0; i < 4; i++) { marca.disparar('click', { target: marca }); }
+  comprobar('acceso: con 4 clics todavía no se abre', apiClics.estaAbierto(), false);
+  marca.disparar('click', { target: marca });
+  comprobar('acceso: con 5 clics se abre', apiClics.estaAbierto(), true);
+}
+
+pruebaAccesos();
 
 console.log('\n' + (fallos ? fallos + ' prueba(s) fallidas' : 'Todas las pruebas del panel pasaron'));
 process.exit(fallos ? 1 : 0);
