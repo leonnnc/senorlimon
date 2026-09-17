@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carta | Señor Limón — cebiches, tiraditos, piqueos y más</title>
+<meta name="description" content="Carta completa de Señor Limón: cebiches y tiraditos, leche de tigre, piqueos, sopas y sudados, pescados enteros, makis, pastas y risottos, especialidades y bebidas con precios actualizados.">
+<link rel="canonical" href="https://senorlimon.com/carta.html">
+<meta name="theme-color" content="#0e3a4c">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Señor Limón">
+<meta property="og:locale" content="es_PE">
+<meta property="og:title" content="Carta completa | Señor Limón">
+<meta property="og:description" content="Cebiches, tiraditos, leche de tigre, piqueos, sopas, pescados enteros, makis, pastas y risottos con precios actualizados.">
+<meta property="og:image" content="https://senorlimon.com/assets/img/hero-cebiche.webp">
+<meta property="og:url" content="https://senorlimon.com/carta.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<a class="saltar-a-contenido" href="#contenido">Saltar al contenido</a>
+
+<header class="cabecera">
+  <div class="contenedor cabecera__interior">
+    <a class="cabecera__logo" href="index.html" aria-label="Señor Limón, ir al inicio">
+      <img src="assets/img/logo.webp" alt="Señor Limón" width="560" height="126">
+    </a>
+    <nav class="nav" aria-label="Navegación principal">
+      <a class="nav__enlace" href="index.html">Inicio</a>
+      <a class="nav__enlace" href="carta.html" aria-current="page">Carta</a>
+      <a class="nav__enlace" href="locales.html">Locales</a>
+      <a class="nav__enlace" href="nosotros.html">Nosotros</a>
+      <a class="nav__enlace" href="contacto.html">Contacto</a>
+    </nav>
+    <div class="cabecera__acciones">
+      <a class="boton boton--whatsapp boton--sm" data-whatsapp href="#" target="_blank" rel="noopener">Pedir ahora</a>
+      <button class="boton-menu" type="button" aria-expanded="false" aria-controls="nav-movil" aria-label="Abrir menú">
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="nav-movil" id="nav-movil" aria-hidden="true">
+  <a href="index.html">Inicio</a>
+  <a href="carta.html" aria-current="page">Carta</a>
+  <a href="locales.html">Locales</a>
+  <a href="nosotros.html">Nosotros</a>
+  <a href="contacto.html">Contacto</a>
+  <a class="boton boton--whatsapp boton--bloque" data-whatsapp href="#" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+</div>
+
+<main id="contenido">
+
+  <section class="seccion--ajustada fondo-azul">
+    <div class="contenedor">
+      <p class="antetitulo">Carta vigente</p>
+      <h1 style="font-size:clamp(1.9rem,5vw,3.1rem)">Nuestra carta</h1>
+      <p class="entradilla" style="max-width:640px">Diez secciones de cocina marina peruana. Usa el buscador o elige una sección para ir directo a lo que te provoca.</p>
+    </div>
+  </section>
+
+  <section class="seccion--carta">
+    <div class="contenedor carta-layout">
+
+      <aside class="carta-lateral">
+        <div class="carta-controles">
+          <div class="campo-busqueda">
+            <span class="campo-busqueda__icono" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+            </span>
+            <label class="saltar-a-contenido" for="buscador-carta">Buscar un plato</label>
+            <input type="search" id="buscador-carta" placeholder="Buscar un plato: cebiche, chaufa, risotto…" autocomplete="off">
+            <button class="campo-busqueda__limpiar" type="button" id="limpiar-busqueda" aria-label="Limpiar búsqueda">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            </button>
+          </div>
+          <p class="carta-cuenta" id="carta-cuenta" role="status" aria-live="polite"></p>
+          <p class="carta-actual" id="categoria-actual" aria-hidden="true"></p>
+        </div>
+        <nav class="carta-indice" id="indice-categorias" aria-label="Secciones de la carta"></nav>
+      </aside>
+
+      <div class="carta-principal">
+        <div class="carta-aviso aparecer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+          <p>Los precios pueden variar según la pesca del día. Si buscas un plato específico, confírmalo por WhatsApp antes de tu pedido. Los platos sin precio publicado son de consulta directa en el local.</p>
+        </div>
+
+        <div id="carta-contenido"></div>
+
+        <div class="sin-resultados" id="sin-resultados" style="display:none">
+          <strong>No encontramos ese plato</strong>
+          <p>Prueba con otra palabra (por ejemplo «cebiche», «chaufa» o «risotto») o revisa todas las secciones.</p>
+          <div class="grupo-botones" style="justify-content:center;margin-top:20px">
+            <button class="boton boton--oscuro" type="button" id="boton-ver-todo">Ver toda la carta</button>
+            <a class="boton boton--whatsapp" data-whatsapp href="#" target="_blank" rel="noopener">Preguntar por WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion--ajustada">
+    <div class="contenedor">
+      <div class="llamada aparecer">
+        <div class="llamada__interior">
+          <div>
+            <h2 style="font-size:clamp(1.4rem,3vw,2rem)">¿Listo para pedir?</h2>
+            <p class="entradilla">Delivery gratis hasta 3.5 km en nuestros locales de La Molina, San Isidro, San Miguel y Cercado de Lima.</p>
+          </div>
+          <div class="grupo-botones">
+            <a class="boton boton--principal" data-whatsapp href="#" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+            <a class="boton boton--claro" href="locales.html">Ver locales</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pie">
+  <div class="contenedor">
+    <div class="pie__rejilla">
+      <div class="pie__marca">
+        <img src="assets/img/marca.webp" alt="Señor Limón" width="512" height="512">
+        <p>Cevichería y cocina marina peruana desde 2001. Cebiches, tiraditos, leche de tigre y piqueos en ocho locales de Lima.</p>
+        <div class="pie__redes">
+          <a class="pie__red" href="https://www.instagram.com/senorlimonoficial/" target="_blank" rel="noopener" aria-label="Instagram de Señor Limón">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a class="pie__red" href="https://www.youtube.com/channel/UCTr-tHlAeg0u5ptyzKB5sug/videos" target="_blank" rel="noopener" aria-label="YouTube de Señor Limón">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.5-.4-5.2a2.6 2.6 0 0 0-1.8-1.9C19.1 4.5 12 4.5 12 4.5s-7.1 0-8.8.4A2.6 2.6 0 0 0 1.4 6.8C1 8.5 1 12 1 12s0 3.5.4 5.2a2.6 2.6 0 0 0 1.8 1.9c1.7.4 8.8.4 8.8.4s7.1 0 8.8-.4a2.6 2.6 0 0 0 1.8-1.9C23 15.5 23 12 23 12zM9.8 15.3V8.7l5.7 3.3-5.7 3.3z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>La carta</h4>
+        <ul class="pie__lista">
+          <li><a href="carta.html#cebiches">Cebiches y tiraditos</a></li>
+          <li><a href="carta.html#piqueos">Piqueos</a></li>
+          <li><a href="carta.html#leche-de-tigre">Leche de tigre</a></li>
+          <li><a href="carta.html#sopas-y-sudados">Sopas y sudados</a></li>
+          <li><a href="carta.html#pescados-enteros">Pescados enteros</a></li>
+          <li><a href="carta.html#pastas-y-risottos">Pastas y risottos</a></li>
+          <li><a href="carta.html#cervezas-y-gaseosas">Cervezas y gaseosas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Pedidos por teléfono</h4>
+        <ul class="pie__lista" id="locales-pie"></ul>
+      </div>
+      <div>
+        <h4>Pide y síguenos</h4>
+        <p style="font-size:.92rem">Delivery gratis hasta 3.5 km. Aceptamos reservas y pedidos para llevar.</p>
+        <p style="font-size:.92rem;margin-top:8px">Horario de atención: <span data-horario>12:00 a 5:30 p.m.</span></p>
+        <div class="grupo-botones" style="margin-top:16px">
+          <a class="boton boton--whatsapp boton--sm" data-whatsapp href="#" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="boton boton--borde boton--sm" style="color:#fff;border-color:rgba(255,255,255,.4)" href="contacto.html">Contacto</a>
+        </div>
+        <img class="pie__tarjetas" src="assets/img/tarjetas.webp" alt="Medios de pago aceptados" width="320" height="47" loading="lazy">
+      </div>
+    </div>
+    <div class="pie__legal">
+      <span>© <span data-anio>2026</span> Señor Limón. Todos los derechos reservados.</span>
+      <span>Lima, Perú · Cevichería y cocina marina</span>
+    </div>
+  </div>
+</footer>
+
+<a class="boton-flotante" data-whatsapp href="#" target="_blank" rel="noopener" aria-label="Pedir por WhatsApp">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm5.6 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.8-.6-3.1-1.3-5.1-4.4-5.3-4.6-.1-.2-1.2-1.6-1.2-3 0-1.4.7-2.1 1-2.4.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.1.1.6-.1 1.3z"/></svg>
+  <span>Pedir por WhatsApp</span>
+</a>
+<button class="boton-subir" type="button" aria-label="Volver arriba">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</button>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/panel.js"></script>
+</body>
+</html>

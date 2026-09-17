@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contacto y pedidos | Señor Limón</title>
+<meta name="description" content="Pide por WhatsApp, llámanos o déjanos tu mensaje. Pedidos para llevar, delivery y reservas en los 8 locales de Señor Limón en Lima.">
+<link rel="canonical" href="https://senorlimon.com/contacto.html">
+<meta name="theme-color" content="#0e3a4c">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Señor Limón">
+<meta property="og:locale" content="es_PE">
+<meta property="og:title" content="Contacto y pedidos | Señor Limón">
+<meta property="og:description" content="Pide por WhatsApp o teléfono. Delivery gratis hasta 3.5 km y reservas de mesa.">
+<meta property="og:image" content="https://senorlimon.com/assets/img/hero-cebiche.webp">
+<meta property="og:url" content="https://senorlimon.com/contacto.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+<body>
+<a class="saltar-a-contenido" href="#contenido">Saltar al contenido</a>
+
+<header class="cabecera">
+  <div class="contenedor cabecera__interior">
+    <a class="cabecera__logo" href="index.html" aria-label="Señor Limón, ir al inicio">
+      <img src="assets/img/logo.webp" alt="Señor Limón" width="560" height="126">
+    </a>
+    <nav class="nav" aria-label="Navegación principal">
+      <a class="nav__enlace" href="index.html">Inicio</a>
+      <a class="nav__enlace" href="carta.html">Carta</a>
+      <a class="nav__enlace" href="locales.html">Locales</a>
+      <a class="nav__enlace" href="nosotros.html">Nosotros</a>
+      <a class="nav__enlace" href="contacto.html" aria-current="page">Contacto</a>
+    </nav>
+    <div class="cabecera__acciones">
+      <a class="boton boton--whatsapp boton--sm" data-whatsapp href="#" target="_blank" rel="noopener">Pedir ahora</a>
+      <button class="boton-menu" type="button" aria-expanded="false" aria-controls="nav-movil" aria-label="Abrir menú">
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="nav-movil" id="nav-movil" aria-hidden="true">
+  <a href="index.html">Inicio</a>
+  <a href="carta.html">Carta</a>
+  <a href="locales.html">Locales</a>
+  <a href="nosotros.html">Nosotros</a>
+  <a href="contacto.html" aria-current="page">Contacto</a>
+  <a class="boton boton--whatsapp boton--bloque" data-whatsapp href="#" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+</div>
+
+<main id="contenido">
+
+  <section class="seccion--ajustada fondo-azul">
+    <div class="contenedor">
+      <p class="antetitulo">Contacto</p>
+      <h1 style="font-size:clamp(1.9rem,5vw,3.1rem)">Hablemos de tu pedido</h1>
+      <p class="entradilla" style="max-width:640px">Escríbenos por WhatsApp, llámanos a tu local más cercano o déjanos tu mensaje en el formulario.</p>
+    </div>
+  </section>
+
+  <section class="seccion">
+    <div class="contenedor">
+      <div class="bloque-historia" style="align-items:start">
+        <div class="aparecer">
+          <div class="encabezado-seccion" style="margin-bottom:22px">
+            <p class="antetitulo">Formulario</p>
+            <h2 style="font-size:clamp(1.4rem,3vw,1.9rem)">Cuéntanos qué necesitas</h2>
+            <p class="entradilla">Al enviar, se abre WhatsApp con tu mensaje ya escrito. Solo tienes que pulsar enviar.</p>
+          </div>
+          <form class="formulario" id="formulario-contacto" novalidate>
+            <div class="formulario__fila formulario__fila--2">
+              <div class="campo">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="name" required>
+                <p class="campo__error">Escribe tu nombre (mínimo 3 letras).</p>
+              </div>
+              <div class="campo">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="999 999 999" autocomplete="tel" required>
+                <p class="campo__error">Escribe un teléfono válido para contactarte.</p>
+              </div>
+            </div>
+            <div class="formulario__fila formulario__fila--2">
+              <div class="campo">
+                <label for="campo-distrito">Local o zona</label>
+                <select id="campo-distrito" name="distrito" required>
+                  <option value="">Elige un local…</option>
+                </select>
+                <p class="campo__error">Elige el local o zona de entrega.</p>
+              </div>
+              <div class="campo">
+                <label for="motivo">Motivo</label>
+                <select id="motivo" name="motivo">
+                  <option value="Pedido para llevar">Pedido para llevar</option>
+                  <option value="Delivery a domicilio">Delivery a domicilio</option>
+                  <option value="Reserva de mesa">Reserva de mesa</option>
+                  <option value="Consulta general">Consulta general</option>
+                </select>
+              </div>
+            </div>
+            <div class="campo">
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos qué quieres pedir, para cuántas personas y a qué hora." required></textarea>
+              <p class="campo__error">Escribe un mensaje de al menos 10 caracteres.</p>
+            </div>
+            <p class="formulario__aviso" id="aviso-formulario" role="status" aria-live="polite"></p>
+            <div class="grupo-botones">
+              <button class="boton boton--whatsapp" type="submit">Enviar por WhatsApp</button>
+            </div>
+            <p class="formulario__nota">No guardamos tus datos en este sitio: el mensaje se envía directamente por WhatsApp.</p>
+          </form>
+        </div>
+
+        <div class="datos-contacto aparecer">
+          <div class="dato-contacto">
+            <div class="dato-contacto__icono"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm5.6 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.8-.6-3.1-1.3-5.1-4.4-5.3-4.6-.1-.2-1.2-1.6-1.2-3 0-1.4.7-2.1 1-2.4.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.1.1.6-.1 1.3z"/></svg></div>
+            <div>
+              <strong>WhatsApp de pedidos</strong>
+              <a data-whatsapp href="#" target="_blank" rel="noopener">Abrir conversación</a>
+              <p style="font-size:.9rem;color:var(--gris-500)">Atención en horario de tienda de cada local.</p>
+            </div>
+          </div>
+          <div class="dato-contacto">
+            <div class="dato-contacto__icono"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div>
+              <strong>Nuestros ocho locales</strong>
+              <ul class="pie__lista" id="locales-pie" style="margin-top:8px;color:inherit"></ul>
+            </div>
+          </div>
+          <div class="dato-contacto">
+            <div class="dato-contacto__icono"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M9 17h6l-3-8H7l2 8zM14 9h3l2 5"/></svg></div>
+            <div>
+              <strong>Delivery gratis hasta 3.5 km</strong>
+              <p style="font-size:.92rem;color:var(--gris-700)">Repartimos con servicio propio alrededor de cada local. Consúltanos si tu dirección entra en el radio.</p>
+            </div>
+          </div>
+          <div class="dato-contacto">
+            <div class="dato-contacto__icono"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+            <div>
+              <strong>Horario de atención</strong>
+              <p style="font-size:.92rem;color:var(--gris-700)">Todos los locales abren de <span data-horario>12:00 a 5:30 p.m.</span></p>
+            </div>
+          </div>
+          <div class="dato-contacto">
+            <div class="dato-contacto__icono"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></div>
+            <div>
+              <strong>Redes sociales</strong>
+              <p style="font-size:.92rem"><a href="https://www.instagram.com/senorlimonoficial/" target="_blank" rel="noopener">Instagram @senorlimonoficial</a><br>
+              <a href="https://www.youtube.com/channel/UCTr-tHlAeg0u5ptyzKB5sug/videos" target="_blank" rel="noopener">Canal de YouTube</a></p>
+            </div>
+          </div>
+          <div class="dato-contacto">
+            <div class="dato-contacto__icono"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
+            <div>
+              <strong>Medios de pago</strong>
+              <img src="assets/img/tarjetas.webp" alt="Tarjetas aceptadas en Señor Limón" width="320" height="47" loading="lazy" style="margin-top:8px">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion--ajustada">
+    <div class="contenedor">
+      <div class="llamada aparecer">
+        <div class="llamada__interior">
+          <div>
+            <h2 style="font-size:clamp(1.4rem,3vw,2rem)">¿Prefieres llamar?</h2>
+            <p class="entradilla">Marca al local más cercano y toma tu pedido en minutos.</p>
+          </div>
+          <div class="grupo-botones">
+            <a class="boton boton--principal" href="locales.html">Ver teléfonos</a>
+            <a class="boton boton--claro" href="carta.html">Ver la carta</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pie">
+  <div class="contenedor">
+    <div class="pie__rejilla">
+      <div class="pie__marca">
+        <img src="assets/img/marca.webp" alt="Señor Limón" width="512" height="512">
+        <p>Cevichería y cocina marina peruana desde 2001. Cebiches, tiraditos, leche de tigre y piqueos en ocho locales de Lima.</p>
+        <div class="pie__redes">
+          <a class="pie__red" href="https://www.instagram.com/senorlimonoficial/" target="_blank" rel="noopener" aria-label="Instagram de Señor Limón">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a class="pie__red" href="https://www.youtube.com/channel/UCTr-tHlAeg0u5ptyzKB5sug/videos" target="_blank" rel="noopener" aria-label="YouTube de Señor Limón">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.5-.4-5.2a2.6 2.6 0 0 0-1.8-1.9C19.1 4.5 12 4.5 12 4.5s-7.1 0-8.8.4A2.6 2.6 0 0 0 1.4 6.8C1 8.5 1 12 1 12s0 3.5.4 5.2a2.6 2.6 0 0 0 1.8 1.9c1.7.4 8.8.4 8.8.4s7.1 0 8.8-.4a2.6 2.6 0 0 0 1.8-1.9C23 15.5 23 12 23 12zM9.8 15.3V8.7l5.7 3.3-5.7 3.3z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>La carta</h4>
+        <ul class="pie__lista">
+          <li><a href="carta.html#cebiches">Cebiches y tiraditos</a></li>
+          <li><a href="carta.html#piqueos">Piqueos</a></li>
+          <li><a href="carta.html#leche-de-tigre">Leche de tigre</a></li>
+          <li><a href="carta.html#sopas-y-sudados">Sopas y sudados</a></li>
+          <li><a href="carta.html#pescados-enteros">Pescados enteros</a></li>
+          <li><a href="carta.html#pastas-y-risottos">Pastas y risottos</a></li>
+          <li><a href="carta.html#cervezas-y-gaseosas">Cervezas y gaseosas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Pedidos por teléfono</h4>
+        <ul class="pie__lista" id="locales-pie"></ul>
+      </div>
+      <div>
+        <h4>Pide y síguenos</h4>
+        <p style="font-size:.92rem">Delivery gratis hasta 3.5 km. Aceptamos reservas y pedidos para llevar.</p>
+        <p style="font-size:.92rem;margin-top:8px">Horario de atención: <span data-horario>12:00 a 5:30 p.m.</span></p>
+        <div class="grupo-botones" style="margin-top:16px">
+          <a class="boton boton--whatsapp boton--sm" data-whatsapp href="#" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="boton boton--borde boton--sm" style="color:#fff;border-color:rgba(255,255,255,.4)" href="contacto.html">Contacto</a>
+        </div>
+        <img class="pie__tarjetas" src="assets/img/tarjetas.webp" alt="Medios de pago aceptados" width="320" height="47" loading="lazy">
+      </div>
+    </div>
+    <div class="pie__legal">
+      <span>© <span data-anio>2026</span> Señor Limón. Todos los derechos reservados.</span>
+      <span>Lima, Perú · Cevichería y cocina marina</span>
+    </div>
+  </div>
+</footer>
+
+<a class="boton-flotante" data-whatsapp href="#" target="_blank" rel="noopener" aria-label="Pedir por WhatsApp">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm5.6 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.8-.6-3.1-1.3-5.1-4.4-5.3-4.6-.1-.2-1.2-1.6-1.2-3 0-1.4.7-2.1 1-2.4.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.1.1.6-.1 1.3z"/></svg>
+  <span>Pedir por WhatsApp</span>
+</a>
+<button class="boton-subir" type="button" aria-label="Volver arriba">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</button>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/panel.js"></script>
+</body>
+</html>

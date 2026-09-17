@@ -1,0 +1,15 @@
+# Materiales de trabajo: no forman parte de la web publicada
+_raw/
+media-output/
+_review/
+vista-previa-*.png
+
+# Restos de las herramientas
+__pycache__/
+*.pyc
+*.log
+
+# Sistema
+Thumbs.db
+.DS_Store
+desktop.ini
